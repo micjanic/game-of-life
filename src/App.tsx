@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import produce from 'immer';
 
 const numRows = 50
 const numCols = 50
@@ -24,7 +25,10 @@ const App: React.FC = () => {
         rows.map((col, k) => (
           <div
             onClick={() => {
-              grid[i][k] = 1
+              const newGrid = produce(grid, gridCopy => {
+                gridCopy[i][k] = 1
+              })
+              setGrid(newGrid)
             }}
             key={`${i}-${k}`}
             style={{
