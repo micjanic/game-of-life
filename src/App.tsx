@@ -12,7 +12,7 @@ const operations = [
   [1, 1],
   [-1, -1],
   [1, 0],
-  [-1, 1]
+  [-1, 0]
 ]
 
 const App: React.FC = () => {
