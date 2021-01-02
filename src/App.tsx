@@ -63,7 +63,14 @@ const App: React.FC = () => {
 
   return (
     <>
-      <button onClick={() => setRunning(!running)}>{running ? 'stop' : 'start'}</button>
+      <button onClick={() => {
+        setRunning(!running);
+        if (!running) {
+          runningRef.current = true
+          runSimulation()
+        }
+
+      }}>{running ? 'stop' : 'start'}</button>
       <div
         style={{
           display: 'grid',
