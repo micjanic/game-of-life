@@ -23,6 +23,9 @@ const App: React.FC = () => {
       {grid.map((rows, i) =>
         rows.map((col, k) => (
           <div
+            onClick={() => {
+              grid[i][k] = 1
+            }}
             key={`${i}-${k}`}
             style={{
               width: 20,
